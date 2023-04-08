@@ -6,7 +6,7 @@ pipeline {
   stages {
     stage ('Build') {
       steps {
-        sh 'printenv'
+        sh 'print(env)'
         sh 'npm install'        
       }
     }
@@ -21,3 +21,4 @@ pipeline {
       }
     }
   }
+}
