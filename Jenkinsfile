@@ -1,14 +1,16 @@
 pipeline {
+  agent any
   tools {
     nodejs 'node'
   }
   stages {
-    stage ('Build') 
+    stage ('Build') {
       steps {
         sh 'printenv'
         sh 'npm install'        
       }
     }
+  }
     stage ('Publish ECR') {
       steps {
         withEnv (["AWS_ACCESS_KEY_ID=${env.AWS_ACCESS_KEY_ID}", "AWS_SECRET_ACESS_KEY=${env.AWS_SECRET_ACESS_KEY}", "AWS_DEFAULT_REGION=${env.AWS_DEFAULT_REGION}"]) {
