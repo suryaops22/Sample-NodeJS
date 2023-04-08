@@ -3,10 +3,7 @@ pipeline {
     nodejs 'node'
   }
   stages {
-    stage ('Build') {
-       steps {
-                git 'https://github.com/suryaops22/Sample-NodeJS.git'
-                CMD {'npm install'}
+    stage ('Build') 
       steps {
         sh 'printenv'
       }
