@@ -6,7 +6,7 @@ pipeline {
     stage ('Build') 
       steps {
         sh 'printenv'
-        CMD 'npm install'        
+        sh 'npm install'        
       }
     }
     stage ('Publish ECR') {
